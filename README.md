@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# Dept. of Information Technology & Computer Applications | Andhra University
 
-## Project info
+![Dept IT & CA Banner](public/au-logo.png)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+A modern, dynamic web platform for the **Department of Information Technology & Computer Applications** at **Andhra University College of Engineering (A)**. This project serves as the digital face of the department, showcasing its leadership, faculty, academic programs, and vibrant student events.
 
-## How can I edit this code?
+## 🎨 Design Philosophy: Bauhaus & Swiss Style
 
-There are several ways of editing your application.
+This project features a distinct **Bauhaus-inspired design system** ("The Construct"), focusing on:
+- **Bold Typography**: High-impact headings using *Cabinet Grotesk* (or similar sans-serifs).
+- **Geometric Grids**: Structural layouts with visible borders and mechanical precision.
+- **Primary Colors**: A strict palette of Black, White, Red (`primary`), Blue (`secondary`), and Yellow (`accent`).
+- **Functional Aesthetics**: Form follows function—clean lines, raw containers, and industrial toggles.
 
-**Use Lovable**
+## ✨ Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Interactive Hero Section**: High-energy introduction with GSAP-powered animations.
+- **Dynamic Event Management**:
+  - Detailed event cards with status indicators (Upcoming, Completed, Registrations Open).
+  - Rich modal views for event details (Highlights, Themes, FAQs).
+- **Academic Showcase**:
+  - **Programs**: B.Tech, M.Tech, MCA, M.Sc, and Ph.D. program details.
+  - **Faculty & Leadership**: Profiles of distinguished method academicians.
+- **Responsive Navigation**: Custom "mechanical" switch navigation tailored for both desktop and mobile.
+- **Rich Content**: Integration of audio/video elements and downloadable resources.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
+- **Framework**: [React](https://react.dev/) with [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (Radix Primitives)
+- **Animations**: [GSAP](https://gsap.com/) (GreenSock)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/harikrishna-au/AUIT-CA-BLOG.git
+   cd AUIT-CA-BLOG
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The app will run at `http://localhost:8080` (or `http://localhost:5173` depending on config).
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📦 Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
 ```
+The output will be in the `dist/` directory.
 
-**Edit a file directly in GitHub**
+## ☁️ Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Vercel
+This project is optimized for Vercel deployment.
+1. Import the repository in Vercel.
+2. The included `vercel.json` handles SPA routing automatically.
+3. Deploy!
 
-**Use GitHub Codespaces**
+## 🤝 Contribution
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project is maintained by the students and faculty of the Dept. of IT & CA.
+- **Main Branch**: `main`
+- **Contributions**: Pull requests are welcome for UI enhancements and content updates.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+**© 2025 Dept. of IT & CA, Andhra University.**
+*Established 2018-19*
