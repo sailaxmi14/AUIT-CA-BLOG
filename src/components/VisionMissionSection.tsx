@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 
+import { SectionHeader } from "./SectionHeader";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export function VisionMissionSection() {
@@ -33,9 +35,13 @@ export function VisionMissionSection() {
     return (
         <section ref={containerRef} className="py-16 bg-background border-b-2 border-black">
             <div className="container">
-                <h2 className="font-heading text-4xl font-bold uppercase mb-12 border-l-8 border-primary pl-4">
-                    Strategic <span className="text-primary">Objectives</span>
-                </h2>
+                <SectionHeader
+                    index="03"
+                    tag="STRATEGY"
+                    title="Strategic"
+                    highlight="Objectives"
+                    description="The guiding principles and long-term goals that drive our department's excellence and commitment to society."
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-2 border-black">
                     {/* Vision */}

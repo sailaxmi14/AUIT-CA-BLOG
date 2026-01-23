@@ -3,6 +3,7 @@ export interface Faculty {
   designation: string;
   qualification: string;
   specialization: string | null;
+  email?: string;
 }
 
 export const facultyData: Faculty[] = [
@@ -16,13 +17,14 @@ export const facultyData: Faculty[] = [
     name: "Dr. M. Ramjee",
     designation: "Professor (Adjunct)",
     qualification: "Ph.D.",
-    specialization: null
+    specialization: "Machine Learning, Data Mining"
   },
   {
     name: "Prof. Gogula Suvarna Kumar",
     designation: "Professor (Adhoc)",
     qualification: "Ph.D",
-    specialization: "AI, ML, Cyber security, Computer Networks, Entrepreneurship Development"
+    specialization: "AI, ML, Cyber security, Computer Networks, Entrepreneurship Development",
+    email: "Prof.gsuvarnakumar@andhrauniversity.edu.in"
   },
   {
     name: "Mr. V. Nagaraju",

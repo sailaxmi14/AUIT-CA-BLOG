@@ -42,7 +42,7 @@ export function LeadershipSection() {
                     <User className="w-12 h-12 text-black" />
                   </div>
                   <CardTitle className="text-3xl mb-2">{currentHod.name}</CardTitle>
-                  <CardDescription className="text-base text-primary font-bold">
+                  <CardDescription className="text-base text-muted-foreground font-bold">
                     {currentHod.designation}
                   </CardDescription>
                 </CardHeader>

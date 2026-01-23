@@ -1,5 +1,5 @@
 import type { Faculty } from "@/data/facultyData";
-import { User, GraduationCap, BookOpen } from "lucide-react";
+import { User, GraduationCap, BookOpen, Mail } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -17,8 +17,8 @@ export function FacultyCard({ faculty, isHod }: FacultyCardProps) {
   return (
     <Card
       className={`group transition-all duration-300 hover:shadow-card ${isHod
-          ? "border-accent/30 ring-1 ring-accent/20"
-          : "border-border/50 hover:border-accent/20"
+        ? "border-accent/30 ring-1 ring-accent/20"
+        : "border-border/50 hover:border-accent/20"
         }`}
     >
       <CardHeader className="flex flex-row items-center gap-4 pb-2">
@@ -51,6 +51,15 @@ export function FacultyCard({ faculty, isHod }: FacultyCardProps) {
             <span className="text-muted-foreground leading-relaxed">
               {faculty.specialization}
             </span>
+          </div>
+        )}
+
+        {faculty.email && (
+          <div className="flex items-center gap-2 text-sm pt-1">
+            <Mail className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+            <a href={`mailto:${faculty.email}`} className="text-muted-foreground hover:text-accent transition-colors break-all">
+              {faculty.email}
+            </a>
           </div>
         )}
       </CardContent>
