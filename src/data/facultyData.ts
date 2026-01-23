@@ -19,10 +19,10 @@ export const facultyData: Faculty[] = [
     specialization: null
   },
   {
-    name: "Suvarna Kumar",
-    designation: "Assistant Professor",
-    qualification: "",
-    specialization: null
+    name: "Prof. Gogula Suvarna Kumar",
+    designation: "Professor (Adhoc)",
+    qualification: "Ph.D",
+    specialization: "AI, ML, Cyber security, Computer Networks, Entrepreneurship Development"
   },
   {
     name: "Mr. V. Nagaraju",
