@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - IT & CA Department</title>
     <link rel="stylesheet" href="/static/admin.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -14,6 +16,8 @@
                 <h1 class="title">Admin Panel</h1>
                 <p class="subtitle">IT & Computer Applications Department</p>
             </div>
+            <a href="/admin/logout"
+                style="background:#dc2626;color:#fff;padding:8px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;">Logout</a>
         </header>
 
         <!-- Tab Navigation -->
@@ -31,7 +35,8 @@
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="event-title">Event Title *</label>
-                            <input type="text" id="event-title" name="title" required placeholder="e.g., AI Hackathon 2026">
+                            <input type="text" id="event-title" name="title" required
+                                placeholder="e.g., AI Hackathon 2026">
                         </div>
 
                         <div class="form-group">
@@ -41,7 +46,8 @@
 
                         <div class="form-group full-width">
                             <label for="event-description">Description *</label>
-                            <textarea id="event-description" name="description" rows="4" required placeholder="Brief description of the event..."></textarea>
+                            <textarea id="event-description" name="description" rows="4" required
+                                placeholder="Brief description of the event..."></textarea>
                         </div>
 
                         <div class="form-group">
@@ -96,12 +102,14 @@
 
                         <div class="form-group">
                             <label for="faculty-designation">Designation *</label>
-                            <input type="text" id="faculty-designation" name="designation" required placeholder="e.g., Professor">
+                            <input type="text" id="faculty-designation" name="designation" required
+                                placeholder="e.g., Professor">
                         </div>
 
                         <div class="form-group">
                             <label for="faculty-department">Department</label>
-                            <input type="text" id="faculty-department" name="department" placeholder="e.g., Computer Science">
+                            <input type="text" id="faculty-department" name="department"
+                                placeholder="e.g., Computer Science">
                         </div>
 
                         <div class="form-group">
@@ -116,7 +124,8 @@
 
                         <div class="form-group">
                             <label for="faculty-specialization">Specialization</label>
-                            <input type="text" id="faculty-specialization" name="specialization" placeholder="e.g., AI & Machine Learning">
+                            <input type="text" id="faculty-specialization" name="specialization"
+                                placeholder="e.g., AI & Machine Learning">
                         </div>
 
                         <div class="form-group full-width">
@@ -164,4 +173,5 @@
 
     <script src="/static/admin.js"></script>
 </body>
+
 </html>

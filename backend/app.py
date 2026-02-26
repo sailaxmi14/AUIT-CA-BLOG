@@ -1,6 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session, redirect, url_for
 from flask_cors import CORS
 import os
+from functools import wraps
 from dotenv import load_dotenv
 from supabase_client import (
     get_all_events,
@@ -20,6 +21,20 @@ from supabase_client import (
 load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.getenv('FLASK_SECRET_KEY', 'change-me-in-production')
+
+# Admin credentials from env
+ADMIN_USERNAME = os.getenv('ADMIN_USERNAME', 'auceit')
+ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', '322107311061')
+
+# Auth decorator
+def login_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('login_page'))
+        return f(*args, **kwargs)
+    return decorated
 
 # Configure CORS
 CORS(app, resources={
@@ -245,7 +260,33 @@ def delete_faculty_endpoint(faculty_id):
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/admin/login', methods=['GET', 'POST'])
+def login_page():
+    """Admin login page"""
+    from flask import render_template
+    if session.get('logged_in'):
+        return redirect(url_for('admin_interface'))
+    error = None
+    if request.method == 'POST':
+        username = request.form.get('username', '')
+        password = request.form.get('password', '')
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session['logged_in'] = True
+            return redirect(url_for('admin_interface'))
+        else:
+            error = 'Invalid username or password. Please try again.'
+    return render_template('login.html', error=error)
+
+
+@app.route('/admin/logout')
+def logout():
+    """Logout and clear session"""
+    session.clear()
+    return redirect(url_for('login_page'))
+
+
 @app.route('/admin')
+@login_required
 def admin_interface():
     """Serve admin interface for event management"""
     from flask import render_template
