@@ -54,14 +54,14 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-100 border-b-2 border-black",
+        "fixed top-0 z-50 w-full transition-all duration-300 border-b-2 border-black",
         scrolled
-          ? "bg-background py-2"
-          : "bg-background py-4"
+          ? "bg-background/95 backdrop-blur-sm py-2 shadow-[0_2px_0_0_rgba(0,0,0,1)]"
+          : "bg-background py-3"
       )}
     >
       <div className="container flex items-center justify-between">
-        {/* Branding - The Construct (Text Only) */}
+        {/* Branding */}
         <a
           href="/"
           className="flex items-center gap-3 group"
@@ -70,21 +70,21 @@ export function Navbar() {
             handleNavigation("/", "route");
           }}
         >
-          <img src="/au-logo.png" alt="Andhra University Logo" className="w-10 h-10 object-contain" />
+          <img src="/au-logo.png" alt="Andhra University Logo" className="w-9 h-9 object-contain" />
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-xl md:text-2xl uppercase tracking-tighter leading-none group-hover:text-primary transition-colors">ANDHRA UNIVERSITY</span>
-            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground leading-none">Dept. IT & CA</span>
+            <span className="font-heading font-bold text-lg md:text-xl uppercase tracking-tighter leading-none group-hover:text-primary transition-colors duration-200">ANDHRA UNIVERSITY</span>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground leading-none mt-0.5">Dept. IT & CA</span>
           </div>
         </a>
 
-        {/* Desktop Navigation - Mechanical Switches */}
-        <nav className="hidden md:flex items-center gap-2">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <Button
               key={item.label}
               variant="ghost"
               className={cn(
-                "rounded-none border-2 border-transparent hover:border-black hover:bg-accent text-foreground font-bold font-heading tracking-tight transition-all active:bg-black active:text-white",
+                "rounded-none border-2 border-transparent hover:border-black hover:bg-accent text-foreground font-bold font-heading tracking-tight transition-all duration-200 text-sm px-3",
                 location.pathname === item.href ? "border-black bg-accent" : ""
               )}
               onClick={() => handleNavigation(item.href, item.type)}
@@ -94,27 +94,27 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile Menu Button - Mechanical */}
+        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden rounded-none border-2 border-black hover:bg-accent"
+          className="md:hidden rounded-none border-2 border-black hover:bg-accent transition-colors duration-200"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
 
-      {/* Mobile Navigation Overlay - Blueprint Grid */}
+      {/* Mobile Navigation Overlay */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-background border-t-2 border-black z-40 animate-in slide-in-from-top-5 bauhaus-grid">
-          <nav className="container py-8 flex flex-col gap-4">
+        <div className="md:hidden fixed inset-0 top-[60px] bg-background/98 backdrop-blur-sm border-t-2 border-black z-40 animate-in slide-in-from-top-3 bauhaus-grid">
+          <nav className="container py-6 flex flex-col gap-3">
             {navItems.map((item) => (
               <Button
                 key={item.label}
                 variant="ghost"
-                className="justify-start text-xl font-heading font-bold uppercase border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none transition-all h-16"
+                className="justify-start text-lg font-heading font-bold uppercase border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,0.9)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.9)] active:shadow-none transition-all duration-200 h-14"
                 onClick={() => handleNavigation(item.href, item.type)}
               >
                 {item.label}

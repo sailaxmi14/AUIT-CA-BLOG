@@ -8,81 +8,83 @@
   :root {
     /* Bauhaus Theme - "The Construct" */
 
-    /* Background: Stark Beige / Off-White */
-    --background: 40 20% 92%;
-    --foreground: 0 0% 10%;
-    /* Ink Black */
+    /* Background: Clean White */
+    --background: 0 0% 97%;
+    --foreground: 0 0% 8%;
 
-    /* Cards & Surfaces - Flat, Blueprint Style */
-    --card: 40 20% 95%;
-    --card-foreground: 0 0% 10%;
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 40 20% 95%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
     /* Primary: Bauhaus / University Red */
     --primary: 348 83% 47%;
-    --primary-foreground: 40 20% 92%;
+    --primary-foreground: 0 0% 100%;
 
     /* Secondary: Bauhaus Blue */
     --secondary: 220 90% 40%;
-    --secondary-foreground: 40 20% 92%;
+    --secondary-foreground: 0 0% 100%;
 
     /* Accent: Bauhaus Yellow */
     --accent: 45 95% 55%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 0 0% 8%;
 
-    /* Muted: Blueprint Grey */
-    --muted: 210 10% 85%;
-    --muted-foreground: 210 10% 40%;
+    /* Muted: Light Grey */
+    --muted: 210 8% 92%;
+    --muted-foreground: 210 8% 42%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 40 20% 92%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Borders & Inputs - Strong & Distinct */
-    --border: 0 0% 10%;
-    --input: 0 0% 10%;
+    /* Borders & Inputs */
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
     --ring: 348 83% 47%;
 
     --radius: 0px;
-    /* Sharp corners for Bauhaus geometry */
 
     /* Layout Variables */
     --grid-gap: 2rem;
   }
 
   .dark {
-    /* Inverted Blueprint (if ever needed, but plan implies light/beige) */
     --background: 220 15% 10%;
-    --foreground: 40 20% 92%;
-    --card: 220 15% 15%;
-    --card-foreground: 40 20% 92%;
-    --popover: 220 15% 15%;
-    --popover-foreground: 40 20% 92%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 14%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 14%;
+    --popover-foreground: 0 0% 95%;
     --primary: 348 83% 47%;
-    --primary-foreground: 40 20% 92%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 220 90% 40%;
-    --secondary-foreground: 40 20% 92%;
+    --secondary-foreground: 0 0% 100%;
     --accent: 45 95% 55%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 0 0% 8%;
     --muted: 220 10% 20%;
     --muted-foreground: 220 10% 60%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 40 20% 92%;
-    --border: 40 20% 92%;
-    --input: 40 20% 92%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 95%;
+    --input: 0 0% 95%;
     --ring: 348 83% 47%;
   }
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground antialiased selection:bg-accent selection:text-black;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
 
   h1,
@@ -98,19 +100,19 @@
 @layer utilities {
   .bauhaus-grid {
     background-image:
-      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .mech-border {
     @apply border-2 border-black;
-    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.9);
   }
 
   .mech-button {
-    @apply border-2 border-black bg-white hover:bg-accent hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px];
-    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+    @apply border-2 border-black bg-white hover:bg-accent hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-200 active:translate-x-[3px] active:translate-y-[3px];
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.9);
   }
 
   .text-blueprint {

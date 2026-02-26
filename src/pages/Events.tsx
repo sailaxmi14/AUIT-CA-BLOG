@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button";
 const Events = () => {
     const [events, setEvents] = useState<Event[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
     const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
     useEffect(() => {
@@ -29,11 +28,9 @@ const Events = () => {
     const loadEvents = async () => {
         try {
             setLoading(true);
-            setError(null);
             const data = await fetchEvents();
             setEvents(data);
         } catch (err) {
-            setError('Failed to load events. Please try again later.');
             console.error(err);
         } finally {
             setLoading(false);
@@ -78,23 +75,8 @@ const Events = () => {
                             </div>
                         )}
 
-                        {/* Error State */}
-                        {error && !loading && (
-                            <div className="text-center py-20">
-                                <div className="border-4 border-black bg-white p-12 inline-block">
-                                    <p className="text-xl font-bold mb-4">{error}</p>
-                                    <Button
-                                        onClick={loadEvents}
-                                        className="mech-button rounded-none bg-black text-white hover:bg-primary"
-                                    >
-                                        Retry
-                                    </Button>
-                                </div>
-                            </div>
-                        )}
-
                         {/* Empty State */}
-                        {!loading && !error && events.length === 0 && (
+                        {!loading && events.length === 0 && (
                             <div className="text-center py-20">
                                 <div className="border-4 border-black bg-white p-12 inline-block">
                                     <p className="text-2xl font-bold">No events yet!</p>
@@ -104,7 +86,7 @@ const Events = () => {
                         )}
 
                         {/* Events Grid */}
-                        {!loading && !error && events.length > 0 && (
+                        {!loading && events.length > 0 && (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {events.map((event) => (
                                     <Card
